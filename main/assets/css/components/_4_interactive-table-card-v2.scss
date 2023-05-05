@@ -1,0 +1,16 @@
+@use '../base' as *;
+@use '_1_tabbed-navigation.scss' as *;
+@use '_1_custom-select.scss' as *;
+@use '_1_custom-checkbox.scss' as *;
+@use '_1_expandable-search.scss' as *;
+@use '_1_pagination.scss' as *;
+@use '_3_interactive-table.scss' as *;
+
+/* -------------------------------- 
+
+File#: _4_interactive-table-card-v2
+Title: Interactive Table Card v2
+Descr: A sortable table with bulk actions and filter options
+Usage: codyhouse.co/license
+
+-------------------------------- */

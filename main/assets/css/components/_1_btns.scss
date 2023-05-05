@@ -1,0 +1,114 @@
+@use '../base' as *;
+
+/* -------------------------------- 
+
+File#: _1_btns
+Title: Buttons (Group)
+Descr: Group of connected buttons
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+:root {
+  --btns-button-radius: var(--radius-md);
+  --btns-button-padding-x: var(--space-sm);
+  --btns-button-padding-y: var(--space-xxs);
+}
+
+.btns { /* button group */
+  > *:first-child, *:first-child .btns__btn {
+    border-radius: var(--btns-button-radius) 0 0 var(--btns-button-radius);
+  }
+
+  > *:last-child, *:last-child .btns__btn {
+    border-radius: 0 var(--btns-button-radius) var(--btns-button-radius) 0;
+  }
+}
+
+.btns[class*="gap-xxxxs"], .btns[class*="gap-xxxs"], .btns[class*="gap-xxs"], .btns[class*="gap-xs"], .btns[class*="gap-sm"], .btns[class*="gap-md"], .btns[class*="gap-lg"], .btns[class*="gap-xl"], .btns[class*="gap-xxl"], .btns[class*="gap-xxxl"], .btns[class*="gap-xxxxl"] {
+  .btns__btn {
+    border-radius: var(--btns-button-radius) !important;
+  }
+}
+
+/* single button */
+.btns__btn {
+  @include reset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: var(--btns-button-padding-y) var(--btns-button-padding-x);
+  background-color: alpha(var(--color-contrast-higher), 0.1);
+  transition: .2s;
+  cursor: pointer;
+  @include fontSmooth;
+
+  &:hover:not(.btns__btn--selected) {
+    background-color: alpha(var(--color-contrast-higher), 0.075);
+  }
+
+  &:focus {
+    z-index: 1;
+    outline: none;
+    box-shadow: 0 0 0 2px alpha(var(--color-contrast-higher), 0.2);
+  }
+}
+
+.btns__btn--selected { /* selected style */
+  background-color: var(--color-contrast-higher);
+  color: var(--color-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+.btns__btn--disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+/* --radio, --checkbox */
+.btns--radio, .btns--checkbox {
+  > * {
+    position: relative;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    /* hide native buttons */
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    height: 0;
+    width: 0;
+    pointer-events: none;
+  }
+
+  input[type="radio"] + label,
+  input[type="checkbox"] + label {
+    user-select: none;
+  }
+
+  input[type="radio"]:focus + label,
+  input[type="checkbox"]:focus + label {
+    z-index: 1;
+    box-shadow: 0 0 0 2px alpha(var(--color-contrast-higher), 0.2);
+  }
+
+  input[type="radio"]:checked + label,
+  input[type="checkbox"]:checked + label {
+    /* checked state */
+    @extend .btns__btn--selected;
+  }
+}
+
+.btns__btn--icon {
+  padding: var(--btns-button-padding-y);
+
+  .icon {
+    display: block;
+  }
+}

@@ -1,0 +1,102 @@
+<div class="multi-select-v2 js-multi-select-v2">
+
+  <div class="list-filter  js-list-filter">
+    <div class="list-filter__form space-unit-rem bg-light radius-md shadow-sm inner-glow">
+      <div class="position-relative border-bottom border-contrast-lower no-js:is-hidden">
+        <input autocomplete="off" class="reset list-filter__search padding-sm text-sm js-list-filter__search" type="search" name="list-filter" id="list-filter" placeholder="Search">
+        <span class="list-filter__focus-marker" aria-hidden="true"></span>
+        <button class="reset list-filter__search-cancel-btn js-list-filter__search-cancel-btn right-sm js-tab-focus" type="button">
+          <svg class="block icon icon--xs" viewBox="0 0 16 16">
+            <title>Reset selection</title>
+            <path d="M8,0a8,8,0,1,0,8,8A8,8,0,0,0,8,0Z" fill="var(--color-contrast-medium)" />
+            <path d="M9.414,8l2.293-2.293a1,1,0,1,0-1.414-1.414L8,6.586,5.707,4.293A1,1,0,0,0,4.293,5.707L6.586,8,4.293,10.293a1,1,0,1,0,1.414,1.414L8,9.414l2.293,2.293a1,1,0,0,0,1.414-1.414Z" fill="var(--color-bg)" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="list-filter__list-wrapper">
+        <ul class="list-filter__list js-list-filter__list">
+          <li class="js-list-filter__item">
+            <label class="multi-select-v2__label padding-y-xs padding-x-sm cursor-pointer text-sm">
+              <span class="custom-checkbox multi-select-v2__checkbox margin-right-xxs pointer-events-none">
+                <input class="custom-checkbox__input js-multi-select-v2__input" type="checkbox" value="option-1" />
+                <span class="custom-checkbox__control" aria-hidden="true"></span>
+              </span>
+              <span class="js-list-filter__label">Dining Tables</span>
+            </label>
+          </li>
+
+          <li class="js-list-filter__item">
+            <label class="multi-select-v2__label padding-y-xs padding-x-sm cursor-pointer text-sm">
+              <span class="custom-checkbox multi-select-v2__checkbox margin-right-xxs pointer-events-none">
+                <input class="custom-checkbox__input js-multi-select-v2__input" type="checkbox" value="option-2" />
+                <span class="custom-checkbox__control" aria-hidden="true"></span>
+              </span>
+              <span class="js-list-filter__label">Coffee Tables</span>
+            </label>
+          </li>
+
+          <li class="js-list-filter__item">
+            <label class="multi-select-v2__label padding-y-xs padding-x-sm cursor-pointer text-sm">
+              <span class="custom-checkbox multi-select-v2__checkbox margin-right-xxs pointer-events-none">
+                <input class="custom-checkbox__input js-multi-select-v2__input" type="checkbox" value="option-3" />
+                <span class="custom-checkbox__control" aria-hidden="true"></span>
+              </span>
+              <span class="js-list-filter__label">Side Tables</span>
+            </label>
+          </li>
+
+          <li class="js-list-filter__item">
+            <label class="multi-select-v2__label padding-y-xs padding-x-sm cursor-pointer text-sm">
+              <span class="custom-checkbox multi-select-v2__checkbox margin-right-xxs pointer-events-none">
+                <input class="custom-checkbox__input js-multi-select-v2__input" type="checkbox" value="option-4" />
+                <span class="custom-checkbox__control" aria-hidden="true"></span>
+              </span>
+              <span class="js-list-filter__label">Outdoor Tables</span>
+            </label>
+          </li>
+
+          <li class="js-list-filter__item">
+            <label class="multi-select-v2__label padding-y-xs padding-x-sm cursor-pointer text-sm">
+              <span class="custom-checkbox multi-select-v2__checkbox margin-right-xxs pointer-events-none">
+                <input class="custom-checkbox__input js-multi-select-v2__input" type="checkbox" value="option-5" />
+                <span class="custom-checkbox__control" aria-hidden="true"></span>
+              </span>
+              <span class="js-list-filter__label">Console Tables</span>
+            </label>
+          </li>
+
+          <li class="js-list-filter__item">
+            <label class="multi-select-v2__label padding-y-xs padding-x-sm cursor-pointer text-sm">
+              <span class="custom-checkbox multi-select-v2__checkbox margin-right-xxs pointer-events-none">
+                <input class="custom-checkbox__input js-multi-select-v2__input" type="checkbox" value="option-6" />
+                <span class="custom-checkbox__control" aria-hidden="true"></span>
+              </span>
+              <span class="js-list-filter__label">Desks</span>
+            </label>
+          </li>
+
+          <li class="js-list-filter__item">
+            <label class="multi-select-v2__label padding-y-xs padding-x-sm cursor-pointer text-sm">
+              <span class="custom-checkbox multi-select-v2__checkbox margin-right-xxs pointer-events-none">
+                <input class="custom-checkbox__input js-multi-select-v2__input" type="checkbox" value="option-7" />
+                <span class="custom-checkbox__control" aria-hidden="true"></span>
+              </span>
+              <span class="js-list-filter__label">Table Accessories</span>
+            </label>
+          </li>
+
+          <li class="is-hidden js-list-filter__no-results-msg padding-md">
+            <p class="text-sm color-contrast-medium">No results</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="margin-top-xxs text-sm flex justify-between">
+    <p class="color-contrast-medium"><span class="js-multi-select-v2__selected-items-counter">0</span> selected</p>
+    <button class="reset link cursor-pointer js-multi-select-v2__reset" type="button">Reset</button>
+  </footer>
+</div>

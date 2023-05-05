@@ -1,0 +1,52 @@
+@use '../base' as *;
+@use '_1_btns.scss' as *;
+@use '_1_custom-select.scss' as *;
+
+/* -------------------------------- 
+
+File#: _2_time-picker
+Title: Time Picker
+Descr: Time selector input
+Usage: codyhouse.co/license
+
+-------------------------------- */
+
+.time-picker {
+  .btns { /* AM/PM switcher */
+    --btns-button-padding-x: var(--form-control-padding-x);
+    --btns-button-padding-y: var(--form-control-padding-y);
+  }
+}
+
+.time-picker__input {
+  text-align: center;
+
+  /* 👇 you can ovveride this padding by using the padding utility classes on the element */
+  &:not([class^="padding-"]):not([class*=" padding-"]) {
+    padding: var(--form-control-padding-y) var(--space-xxxs);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  /* hide native input arrows */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  &[type=number] {
+    -moz-appearance: textfield;
+  }
+}
+
+/* native time input */
+.time-picker-native::-webkit-calendar-picker-indicator {
+  background: currentColor;
+  /* custom icon */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cg fill='currentColor'%3E%3Cpath d='M8,0a8,8,0,1,0,8,8A8.024,8.024,0,0,0,8,0ZM8,14a6,6,0,1,1,6-6A6.018,6.018,0,0,1,8,14Z'%3E%3C/path%3E%3Cpath d='M11.5,7H9V4.5a1,1,0,0,0-2,0V8A1,1,0,0,0,8,9h3.5a1,1,0,0,0,0-2Z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
