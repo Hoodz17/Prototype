@@ -66,8 +66,8 @@
                                                 foreach ($data['mainsHasCats'] as $key => $mainHasCat) {
                                                     if ($key > 3) continue; ?>
                                                     <div>
-                                                        <input class="checkbox" type="checkbox"  name="category-checkbox[]" id="checkbox-<?= $mainHasCat->categoryId ?>" value="<?= $mainHasCat->categoryId ?>" <?= (isset($data['params']['category-checkbox']) && in_array($mainHasCat->categoryId, $data['params']['category-checkbox'])) ? "checked" : "" ?>>
-                                                        <label for="checkbox-<?= $mainHasCat->categoryId ?>"><?= $mainHasCat->categoryName ?></label>
+                                                        <input class="checkbox" type="checkbox"  name="category-checkbox[]" id="categories-<?= $mainHasCat->categoryId ?>" value="<?= $mainHasCat->categoryId ?>" <?= (isset($data['params']['category-checkbox']) && in_array($mainHasCat->categoryId, $data['params']['category-checkbox'])) ? "checked" : "" ?>>
+                                                        <label for="categories-<?= $mainHasCat->categoryId ?>"><?= $mainHasCat->categoryName ?></label>
                                                     </div>
                                                 <?php } ?>
 
@@ -78,8 +78,8 @@
                                                             if ($key < 4) continue;
                                                         ?>
                                                             <div>
-                                                                <input class="checkbox" type="checkbox" name="category-checkbox[]" id="checkbox-<?= $mainHasCat->categoryId ?>" value="<?= $mainHasCat->categoryId ?>" <?= (isset($data['params']['category-checkbox']) && in_array($mainHasCat->categoryId, $data['params']['category-checkbox'])) ? "checked" : "" ?>>
-                                                                <label for="checkbox-<?= $mainHasCat->categoryId ?>"><?= $mainHasCat->categoryName ?></label>
+                                                                <input class="checkbox" type="checkbox" name="category-checkbox[]" id="categories-<?= $mainHasCat->categoryId ?>" value="<?= $mainHasCat->categoryId ?>" <?= (isset($data['params']['category-checkbox']) && in_array($mainHasCat->categoryId, $data['params']['category-checkbox'])) ? "checked" : "" ?>>
+                                                                <label for="categories-<?= $mainHasCat->categoryId ?>"><?= $mainHasCat->categoryName ?></label>
                                                             </div>
                                                         <?php } ?>
                                                     </div>
@@ -111,8 +111,8 @@
                                                 foreach ($data['collections'] as $key => $collection) {
                                                     if ($key > 3) continue; ?>
                                                     <div>
-                                                        <input class="checkbox" type="checkbox" name="collection-checkbox[]" id="checkbox-<?= $collection->collectionId ?>" value="<?= $collection->collectionId ?>" <?= (isset($data['params']['collection-checkbox']) && in_array($collection->collectionId, $data['params']['collection-checkbox'])) ? "checked" : "" ?>>
-                                                        <label for="checkbox-<?= $collection->collectionId ?>"><?= $collection->collectionName ?></label>
+                                                        <input class="checkbox" type="checkbox" name="collection-checkbox[]" id="collections-<?= $collection->collectionId ?>" value="<?= $collection->collectionId ?>" <?= (isset($data['params']['collection-checkbox']) && in_array($collection->collectionId, $data['params']['collection-checkbox'])) ? "checked" : "" ?>>
+                                                        <label for="collections-<?= $collection->collectionId ?>"><?= $collection->collectionName ?></label>
                                                     </div>
                                                 <?php } ?>
 
@@ -123,8 +123,8 @@
                                                             if ($key < 4) continue;
                                                         ?>
                                                             <div>
-                                                                <input class="checkbox" type="checkbox" name="collection-checkbox[]" id="checkbox-<?= $collection->collectionId ?>" value="<?= $collection->collectionId ?>" <?= (isset($data['params']['collection-checkbox']) && in_array($collection->collectionId, $data['params']['collection-checkbox'])) ? "checked" : "" ?>>
-                                                                <label for="checkbox-<?= $collection->collectionId ?>"><?= $collection->collectionName ?></label>
+                                                                <input class="checkbox" type="checkbox" name="collection-checkbox[]" id="collections-<?= $collection->collectionId ?>" value="<?= $collection->collectionId ?>" <?= (isset($data['params']['collection-checkbox']) && in_array($collection->collectionId, $data['params']['collection-checkbox'])) ? "checked" : "" ?>>
+                                                                <label for="collections-<?= $collection->collectionId ?>"><?= $collection->collectionName ?></label>
                                                             </div>
                                                         <?php } ?>
                                                     </div>

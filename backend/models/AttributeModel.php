@@ -26,9 +26,12 @@ class AttributeModel
 
     public function getAttribute($attributeId)
     {
-        $this->db->query(' SELECT attributeId, attributeName, attributeCreateDate, attributeValue, attributeIsActive 
-                               FROM attributes WHERE attributeId = :attributeId ');
-        $this->db->bind("attributeId", $attributeId, PDO::PARAM_INT);
+        $this->db->query(' SELECT attributeId, attributeName,attributeMainId,m.mainName ,attributeValue,attributeCreateDate, attributeIsActive 
+                               FROM attributes as a
+                               INNER JOIN mains as m
+                               ON a.attributeMainId = m.mainId
+                               WHERE attributeId = :attributeId ');
+        $this->db->bind(":attributeId", $attributeId, PDO::PARAM_INT);
         return $this->db->single();
     }
 
@@ -51,10 +54,12 @@ class AttributeModel
     public function updateAttribute($post){
         $this->db->query('UPDATE attributes 
                               SET attributeName = :attributeName,
+                                  attributeMainId = :attributeMainId,
                                   attributeValue = :attributeValue
                                   WHERE attributeId = :attributeId');
         $this->db->bind(':attributeId', $post['attributeId']);
         $this->db->bind(':attributeName', $post['attributeName']);
+        $this->db->bind(':attributeMainId', $post['mainId']);
         $this->db->bind(':attributeValue', $post['attributeValue']);
         return $this->db->execute();
     }

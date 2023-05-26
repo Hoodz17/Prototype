@@ -1,0 +1,30 @@
+<?php
+ include APPROOT. '/models/MainModel.php';
+class MainsController extends Controller
+{
+    public $mainModel;
+    public $queryBuilder;
+    public function __construct()
+    {
+        $this->mainModel = $this->model('MainModel');
+        $this->queryBuilder = new MysqlQueryBuilder;
+    }
+    public function  read(){
+        $params = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+//        $result = $this->mainModel->getMains(array(
+//            'db' => 'mains',
+//            'select' => 'mainId, mainDescription',
+//            'where' => 'mainIsActive = 1 ',
+//            'and' => 'mainId = :mainId',
+//            'type' => 'getById',
+//            'mainId' => $params['id']
+//        ));
+        $result = $this->mainModel->getSingleMain($params['id']);
+        $data = [
+            'title' => 'Books Overview',
+            'result' => $result
+
+        ];
+    $this->view('Mains/read', $data);
+    }
+}

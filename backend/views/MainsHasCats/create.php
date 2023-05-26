@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container max-width-sm padding-y-lg">
-    <form action="<?=APPROOT?>MainsHasCatsController/create" method="POST">
+    <form action="<?=BACKENDROOT?>MainsHasCatsController/create" method="POST">
         <fieldset class="margin-bottom-md">
             <legend class="form-legend">Create MainsHasCats</legend>
             <div class="grid gap-sm">
@@ -41,7 +41,7 @@
         </fieldset>
         <div>
             <input value="submit" name="submit" class="btn btn--primary" type="submit">
-            <a  role="button" class="btn btn--primary" href="<?=APPROOT?>MainsHasCatsController/index">Back</a>
+            <a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>MainsHasCatsController/index">Back</a>
         </div>
     </form>
 </div>

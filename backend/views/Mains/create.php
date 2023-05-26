@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container max-width-sm padding-y-lg">
-    <form action="<?=APPROOT?>MainsController/create" method="POST">
+    <form action="<?=BACKENDROOT?>MainsController/create" method="POST">
         <fieldset class="margin-bottom-md">
             <legend class="form-legend">Create Main</legend>
             <div class="grid gap-sm">
@@ -31,10 +31,16 @@
                     </div>
                 </div>
             </div>
+            <div class="grid gap-sm">
+                <div class="col-6@md">
+                    <label class="form-label margin-bottom-xxs" for="input-name">Main Description </label>
+                      <textarea id="mainDescription" name="mainDescription" class="form-control width-100%" rows="4" cols="50" required></textarea>
+                </div>
+            </div>
         </fieldset>
         <div>
             <input value="submit" name="submit" class="btn btn--primary" type="submit">
-            <a  role="button" class="btn btn--primary" href="<?=APPROOT?>MainsController/index">Back</a>
+            <a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>MainsController/index">Back</a>
         </div>
     </form>
 </div>

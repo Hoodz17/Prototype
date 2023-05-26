@@ -11,6 +11,12 @@ class CollectionsController extends Controller
     public function index(){
         $params = filter_input_array(INPUT_GET, FILTER_UNSAFE_RAW);
         $recordsPerPage = 4;
+
+        if(!isset($params['page'])){
+            header("Location: " . BACKENDROOT . "CollectionsController/index/?page=" . $recordsPerPage);
+        } else{
+
+        }
         $pageNumber = $params['page'];
         $offset =  $pageNumber - $recordsPerPage;
         $paginationNumber = $pageNumber / $recordsPerPage;
@@ -18,14 +24,6 @@ class CollectionsController extends Controller
         $prevPage = $pageNumber - $recordsPerPage;
         $totalRecords = count($this->collectionModel->getAllCollections());
         $lastPage = ceil($totalRecords/$recordsPerPage);
-
-
-        if(!isset($params['page'])){
-
-            header("Location: " . APPROOT . "CollectionsController/index/?page=" . $recordsPerPage);
-        } else{
-
-        }
         $results = $this->collectionModel->getByPagination($recordsPerPage,$offset);
         $data = [ 
                 'nextPage' => $nextPage,
@@ -41,7 +39,7 @@ class CollectionsController extends Controller
             $collectionId = $this->generateRandomString(4);
             $post = filter_input_array(INPUT_POST, FILTER_UNSAFE_RAW);
             $this->collectionModel->createCollection($post, $collectionId);
-            header('Location: ' . APPROOT . 'CollectionsController/index');
+            header('Location: ' . BACKENDROOT . 'CollectionsController/index');
         } else {
             $this->view('Collections/create');
         }
@@ -55,7 +53,7 @@ class CollectionsController extends Controller
             $this->collectionModel->updateCollection($post);
 
             echo "Succesfully update row";
-            header("Location: " . APPROOT . "CollectionsController/index");
+            header("Location: " . BACKENDROOT . "CollectionsController/index");
         } else {
             $results = $this->collectionModel->getCollection($collectionId);
             $data = [
@@ -68,7 +66,7 @@ class CollectionsController extends Controller
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->collectionModel->deleteCollection($collectionId);
             echo "Succesfully deleted row";
-            header("Location: " . APPROOT . "CollectionsController/index");
+            header("Location: " . BACKENDROOT . "CollectionsController/index");
         } else {
             $data = [
                 'title' => 'Delete Collection',

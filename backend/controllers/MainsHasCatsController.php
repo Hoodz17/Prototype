@@ -24,7 +24,7 @@ class MainsHasCatsController extends Controller
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $post = filter_input_array(INPUT_POST, FILTER_UNSAFE_RAW);
             $this->mainHasCatModel->createMainHasCat($post);
-            header('Location: ' . APPROOT . 'MainsHasCatsController/index');
+            header('Location: ' . BACKENDROOT . 'MainsHasCatsController/index');
         } else {
             $mains = $this->mainModel->getAllMains();
             $categories = $this->categoryModel->getAllCategories();
@@ -42,7 +42,7 @@ class MainsHasCatsController extends Controller
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $this->mainHasCatModel->updateMainHasCat($post);
             echo "Succesfully update row";
-            header("Location: " . APPROOT . "MainsHasCatsController/index");
+            header("Location: " . BACKENDROOT . "MainsHasCatsController/index");
         } else {
             $mainCatId = explode('+', $mainCatId);
             $mainId = $mainCatId[0];
@@ -63,7 +63,7 @@ class MainsHasCatsController extends Controller
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $this->mainHasCatModel->deleteMain($post);
             echo "Succesfully deleted row";
-            header("Location: " . APPROOT . "MainsHasCatsController/index");
+            header("Location: " . BACKENDROOT . "MainsHasCatsController/index");
         } else {
             $mainCatId = explode('+', $mainCatId);
             $mainId = $mainCatId[0];

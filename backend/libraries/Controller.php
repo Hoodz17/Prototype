@@ -11,7 +11,6 @@ class Controller
         $this->controllerName = str_replace("Controller", "", get_class($this));
         $this->controllerUrlPath = APPROOT . $this->controllerName . 'Controller/';
     }
-
     public function model($model, Database $db = null)
     {
         require_once(APPROOT . '/models/' . $model . '.php');

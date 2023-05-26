@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container max-width-sm padding-y-lg">
-    <form action="<?=APPROOT?>CategoriesController/create" method="POST">
+    <form action="<?=BACKENDROOT?>CategoriesController/create" method="POST">
         <fieldset class="margin-bottom-md">
             <legend class="form-legend">Create Category</legend>
             <div class="grid gap-sm">
@@ -21,7 +21,7 @@
         </fieldset>
         <div>
             <input value="submit" name="submit" class="btn btn--primary" type="submit">
-            <a  role="button" class="btn btn--primary" href="<?=APPROOT?>CategoriesController/index">Back</a>
+            <a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>CategoriesController/index">Back</a>
         </div>
     </form>
 </div>

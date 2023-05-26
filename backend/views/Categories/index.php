@@ -35,8 +35,8 @@
                     <tr class='int-table__row'>
                         <td class='int-table__cell'><?=$result->categoryName?></td>
                         <td class='int-table__cell'><?=date("d-m-Y",$result->categoryCreateDate);?></td>
-                        <td><a class="btn btn--primary" href="<?=APPROOT?>CategoriesController/update/<?=$result->categoryId?>">✏</a>
-                            <a class="btn btn--primary" href="<?=APPROOT?>CategoriesController/delete/<?=$result->categoryId?>">❌</a></td>
+                        <td><a class="btn btn--primary" href="<?=BACKENDROOT?>CategoriesController/update/<?=$result->categoryId?>">✏</a>
+                            <a class="btn btn--primary" href="<?=BACKENDROOT?>CategoriesController/delete/<?=$result->categoryId?>">❌</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -80,6 +80,6 @@
         </nav>
     </div>
 </div>
-<a  role="button" class="btn btn--primary" href="<?=APPROOT?>CategoriesController/create">Create New Category</a>
+<a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>CategoriesController/create">Create New Category</a>
 </body>
 </html>

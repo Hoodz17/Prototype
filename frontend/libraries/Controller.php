@@ -313,13 +313,13 @@ class Controller
         foreach ($mains as $main) {
             $cards .= "<div class='stats-card bg-light radius-md padding-md inner-glow shadow-xs col-" . $col . "@sm'>
                                 <figure class='card__img-wrapper'>
-                                    <img src='" . URLROOT . $main->screenPath . "' style='height:400px;'>
+                                    <img src='" . URLROOT . $main->screenPath . "' style='height:350px;'>
                                 </figure>
                 
                                 <div class='padding-xs'>
                                     <h4>" . $main->mainName . "</h4>
                                     <footer>
-                                        <a href='" . URLROOT . "HomesController/read/" . $main->mainId . "' class='btn btn--primary text-sm'>Read more</a>
+                                        <a href='" . URLROOT . "MainsController/read?id=" . $main->mainId . "' class='btn btn--primary text-sm'>Read More</a>
                                     </footer>
                                 </div>
                            </div>";

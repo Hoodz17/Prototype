@@ -81,6 +81,7 @@ class Model
             $query .= ' OFFSET ' . $data['offset'];
         }
 
+
         $this->db->query($query);
 
         if (isset($data['binds'])) {

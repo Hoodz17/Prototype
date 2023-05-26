@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container max-width-sm padding-y-lg">
-    <form action="<?=APPROOT?>MainsHasCatsController/update" method="POST">
+    <form action="<?=BACKENDROOT?>MainsHasCatsController/update" method="POST">
         <input hidden="hidden" value="<?= $data['result']->mainId ?>" name="mainHasCatMainId">
         <input hidden="hidden" value="<?= $data['result']->categoryId ?>" name="mainHasCatCategoryId">
         <fieldset class="margin-bottom-md">
@@ -48,7 +48,7 @@
         </fieldset>
         <div>
             <input value="submit" name="submit" class="btn btn--primary" type="submit">
-            <a  role="button" class="btn btn--primary" href="<?=APPROOT?>MainsHasCatsController/index">Back</a>
+            <a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>MainsHasCatsController/index">Back</a>
         </div>
     </form>
 </div>

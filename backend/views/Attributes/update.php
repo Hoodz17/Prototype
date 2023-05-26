@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container max-width-sm padding-y-lg">
-    <form action="<?=APPROOT?>AttributesController/update" method="POST">
+    <form action="<?=BACKENDROOT?>AttributesController/update" method="POST">
         <fieldset class="margin-bottom-md">
             <legend class="form-legend">Update Attribute</legend>
             <div class="grid gap-sm">
@@ -18,6 +18,7 @@
                     <input hidden="hidden" name="attributeId" value="<?= $data['result']->attributeId?>">
                     <div class="select">
                         <select class="select__input form-control" name="mainId" id="mainId">
+                            <option value="<?= $data['result']->attributeMainId ?>"><?= $data['result']->mainName ?></option>
                             <?php foreach ($data['mains'] as $results) {
                                 echo '<option value="' . $results->mainId  . '">' . $results->mainName . '</option>';
                             } ?>
@@ -41,7 +42,7 @@
         </fieldset>
         <div>
             <input value="submit" name="submit" class="btn btn--primary" type="submit">
-            <a  role="button" class="btn btn--primary" href="<?=APPROOT?>AttributesController/index">Back</a>
+            <a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>AttributesController/index">Back</a>
         </div>
     </form>
 </div>

@@ -24,7 +24,7 @@ class ScreensController extends Controller
             $screenId = $this->generateRandomString(4);
             $imgPath = $this->imageUploader();
             $this->screenModel->createScreen($post, $screenId, $imgPath);
-            header('Location: ' . APPROOT . 'ScreensController/index');
+            header('Location: ' . BACKENDROOT . 'ScreensController/index');
         } else {
             $mains = $this->mainModel->getAllMains();
             $data = [
@@ -40,7 +40,7 @@ class ScreensController extends Controller
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $this->screenModel->updateScreen($post,$imgPath);
             echo "Succesfully update row";
-            header("Location: " . APPROOT . "ScreensController/index");
+            header("Location: " . BACKENDROOT . "ScreensController/index");
         } else {
             $screen = $this->screenModel->getScreen($screenId);
             $main = $this->mainModel->getMain($screen->screenMainId);
@@ -57,7 +57,7 @@ class ScreensController extends Controller
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->screenModel->deleteScreen($screenId);
             echo "Succesfully deleted row";
-            header("Location: " . APPROOT . "ScreensController/index");
+            header("Location: " . BACKENDROOT . "ScreensController/index");
         } else {
             $data = [
                 'title' => 'Delete Screen',

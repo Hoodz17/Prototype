@@ -43,8 +43,8 @@
                     <td class='int-table__cell'><?=$result->attributeName?></td>
                     <td class='int-table__cell'><?=$result->attributeValue?></td>
                     <td class='int-table__cell'><?=date("d-m-Y",$result->attributeCreateDate);?></td>
-                    <td><a class="btn btn--primary" href="<?=APPROOT?>AttributesController/update/<?=$result->attributeId?>">✏</a>
-                    <a class="btn btn--primary" href="<?=APPROOT?>AttributesController/delete/<?=$result->attributeId?>">❌</a></td>
+                    <td><a class="btn btn--primary" href="<?=BACKENDROOT?>AttributesController/update/<?=$result->attributeId?>">✏</a>
+                    <a class="btn btn--primary" href="<?=BACKENDROOT?>AttributesController/delete/<?=$result->attributeId?>">❌</a></td>
                 </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -89,6 +89,6 @@
         </nav>
     </div>
 </div>
-<a  role="button" class="btn btn--primary" href="<?=APPROOT?>AttributesController/create">Create New Attribute</a>
+<a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>AttributesController/create">Create New Attribute</a>
 </body>
 </html>

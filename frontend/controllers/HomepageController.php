@@ -30,10 +30,9 @@ class HomepageController extends Controller
             'category' => 'cat.categoryId',
             'collection' => 'm.mainCollectionId'
         ];
-
         $pagination = $this->pagination($params, 12, "Home", $query);
         // creates cards for the index view
-        $cards = $this->createCards($pagination['resultsPage'], "4");
+        $cards = $this->createCards($pagination['resultsPage'], "6");
         // sends data to index view of mainhascat inner join mains and categories
         $mainsHasCats = $this->model->select(array(
             'select' => 'cat.categoryId, cat.categoryName, m.mainId, m.mainName',
@@ -79,4 +78,5 @@ class HomepageController extends Controller
 
         $this->view('Homepage/index', $data);
     }
+
 }

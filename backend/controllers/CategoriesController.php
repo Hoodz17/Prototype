@@ -20,7 +20,7 @@ class CategoriesController extends Controller
             $categoryId = $this->generateRandomString(4);
             $post = filter_input_array(INPUT_POST, FILTER_UNSAFE_RAW);
             $this->categoryModel->createCategory($post, $categoryId);
-            header('Location: ' . APPROOT . 'CategoriesController/index');
+            header('Location: ' . BACKENDROOT . 'CategoriesController/index');
         } else {
             $this->view('Categories/create');
         }
@@ -31,7 +31,7 @@ class CategoriesController extends Controller
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $this->categoryModel->updateCategory($post);
             echo "Succesfully update row";
-            header("Location: " . APPROOT . "CategoriesController/index");
+            header("Location: " . BACKENDROOT . "CategoriesController/index");
         } else {
             $result = $this->categoryModel->getCategory($categoryId);
             $data = [
@@ -45,7 +45,7 @@ class CategoriesController extends Controller
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->categoryModel->deleteCategory($categoryId);
             echo "Succesfully deleted row";
-            header("Location: " . APPROOT . "CategoriesController/");
+            header("Location: " . BACKENDROOT . "CategoriesController/");
         } else {
             $data = [
                 'title' => 'Delete Category',

@@ -22,6 +22,9 @@
                     <th class="int-table__cell int-table__cell--th text-left">
                         Main Collection
                     </th>
+                    <th class="int-table__cell int-table__cell--th text-left">
+                        Main Description
+                    </th>
 
                     <th class="int-table__cell int-table__cell--th text-left">
                         Main Create Date
@@ -36,9 +39,10 @@
                     <tr class='int-table__row'>
                         <td class='int-table__cell'><?=$result->mainName?></td>
                         <td class='int-table__cell'><?=$result->collectionName?></td>
+                        <td class='int-table__cell text-truncate ' ><?=$result->mainDescription?></td>
                         <td class='int-table__cell'><?=date("d-m-Y",$result->mainCreateDate);?></td>
-                        <td><a class="btn btn--primary" href="<?=APPROOT?>MainsController/update/<?=$result->mainId?>">✏</a>
-                            <a class="btn btn--primary" href="<?=APPROOT?>MainsController/delete/<?=$result->mainId?>">❌</a></td>
+                        <td><a class="btn btn--primary" href="<?=BACKENDROOT?>MainsController/update/<?=$result->mainId?>">✏</a>
+                            <a class="btn btn--primary" href="<?=BACKENDROOT?>MainsController/delete/<?=$result->mainId?>">❌</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -82,6 +86,6 @@
         </nav>
     </div>
 </div>
-<a  role="button" class="btn btn--primary" href="<?=APPROOT?>MainsController/create">Create New Main</a>
+<a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>MainsController/create">Create New Main</a>
 </body>
 </html>

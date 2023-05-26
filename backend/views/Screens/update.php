@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="container max-width-sm padding-y-lg">
-    <form action="<?=APPROOT?>ScreensController/update" method="POST" enctype="multipart/form-data">
+    <form action="<?=BACKENDROOT?>ScreensController/update" method="POST" enctype="multipart/form-data">
         <input hidden="hidden" name="screenId" value="<?= $data['screen']->screenId ?>">
         <fieldset class="margin-bottom-md">
             <div class="grid gap-sm">
@@ -35,7 +35,7 @@
         </fieldset>
         <div>
             <input value="submit" name="submit" class="btn btn--primary" type="submit">
-            <a  role="button" class="btn btn--primary" href="<?=APPROOT?>ScreensController/index">Back</a>
+            <a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>ScreensController/index">Back</a>
         </div>
     </form>
 </div>

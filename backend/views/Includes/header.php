@@ -17,7 +17,7 @@
     <!-- header -->
     <header class="app-ui__header shadow-xs padding-x-md padding-x-0@md">
       <div class="app-ui__logo-wrapper padding-x-sm@md">
-        <a href="<?= APPROOT ?>" class="app-ui__logo">
+        <a href="<?= BACKENDROOT ?>" class="app-ui__logo">
           <svg width="104" height="30" viewBox="0 0 104 30" fill="var(--color-contrast-higher)">
             <title>Go to homepage</title>
             <circle cx="15" cy="15" r="15" fill="var(--color-contrast-lower)" opacity="0.5" />
@@ -145,7 +145,7 @@
       
             <ul class="sidenav__list">
               <li class="sidenav__item">
-                <a href="<?= APPROOT ?>" class="sidenav__link" aria-current="page">
+                <a href="<?= BACKENDROOT ?>" class="sidenav__link" aria-current="page">
                   <svg class="icon sidenav__icon" aria-hidden="true" viewBox="0 0 16 16">
                     <g>
                       <path d="M6,0H1C0.4,0,0,0.4,0,1v5c0,0.6,0.4,1,1,1h5c0.6,0,1-0.4,1-1V1C7,0.4,6.6,0,6,0z M5,5H2V2h3V5z"></path>
@@ -173,32 +173,32 @@
     
                 <ul class="sidenav__list">
                   <li class="sidenav__item">
-                    <a href="<?= APPROOT?>MainsController/index" class="sidenav__link">
+                    <a href="<?= BACKENDROOT?>MainsController/index" class="sidenav__link">
                       <span class="sidenav__text text-sm@md">Mains</span>
                     </a>
                   </li>
                     <li class="sidenav__item">
-                        <a href="<?= APPROOT?>CollectionsController/index" class="sidenav__link">
+                        <a href="<?= BACKENDROOT?>CollectionsController/index" class="sidenav__link">
                             <span class="sidenav__text text-sm@md">Collections</span>
                         </a>
                     </li>
                     <li class="sidenav__item">
-                        <a href="<?= APPROOT?>CategoriesController/index" class="sidenav__link">
+                        <a href="<?= BACKENDROOT?>CategoriesController/index" class="sidenav__link">
                             <span class="sidenav__text text-sm@md">Categories</span>
                         </a>
                     </li>
                     <li class="sidenav__item">
-                        <a href="<?= APPROOT?>AttributesController/index" class="sidenav__link">
+                        <a href="<?= BACKENDROOT?>AttributesController/index" class="sidenav__link">
                             <span class="sidenav__text text-sm@md">Attributes</span>
                         </a>
                     </li>
                     <li class="sidenav__item">
-                        <a href="<?= APPROOT?>ScreensController/index" class="sidenav__link">
+                        <a href="<?= BACKENDROOT?>ScreensController/index" class="sidenav__link">
                             <span class="sidenav__text text-sm@md">Screens</span>
                         </a>
                     </li>
                     <li class="sidenav__item">
-                        <a href="<?= APPROOT?>MainsHasCatsController/index" class="sidenav__link">
+                        <a href="<?= BACKENDROOT?>MainsHasCatsController/index" class="sidenav__link">
                             <span class="sidenav__text text-sm@md">MainHasCat</span>
                         </a>
                     </li>

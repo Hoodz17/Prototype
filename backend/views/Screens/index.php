@@ -22,6 +22,9 @@
                     <th class="int-table__cell int-table__cell--th text-left">
                         screenPath
                     </th>
+                    <th class="int-table__cell int-table__cell--th text-left">
+                        screenLocation
+                    </th>
 
                     <th class="int-table__cell int-table__cell--th text-left">
                         screenCreateDate
@@ -37,9 +40,12 @@
                     <tr class='int-table__row'>
                         <td class='int-table__cell'><?=$results->mainName?></td>
                         <td class='int-table__cell'><?=$results->screenPath?></td>
+                        <td class='int-table__cell'><?=$results->screenLocation?></td>
                         <td class='int-table__cell'><?=date("d-m-Y",$results->screenCreateDate);?></td>
-                        <td><a class="btn btn--primary" href="<?=APPROOT?>ScreensController/update/<?=$results->screenId?>">✏</a>
-                            <a class="btn btn--primary" href="<?=APPROOT?>ScreensController/delete/<?=$results->screenId?>">❌</a></td>
+                        <td>
+                        <!--<a class="btn btn--primary" href="--><?php //=BACKENDROOT?><!--ScreensController/update/--><?php //=$results->screenId?><!--">✏</a>-->
+                            <a class="btn btn--primary" href="<?=BACKENDROOT?>ScreensController/delete/<?=$results->screenId?>">❌</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -83,6 +89,6 @@
         </nav>
     </div>
 </div>
-<a  role="button" class="btn btn--primary" href="<?=APPROOT?>ScreensController/create">Create New Screens</a>
+<a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>ScreensController/create">Create New Screens</a>
 </body>
 </html>

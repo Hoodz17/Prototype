@@ -33,8 +33,8 @@
                 <tr class='int-table__row'>
                     <td class='int-table__cell'><?=$results->collectionName?></td>
                     <td class='int-table__cell'><?=date("d-m-Y",$results->collectionCreateDate);?></td>
-                    <td><a class="btn btn--primary" href="<?=APPROOT?>CollectionsController/update/<?=$results->collectionId?>">✏</a>
-                    <a class="btn btn--primary" href="<?=APPROOT?>CollectionsController/delete/<?=$results->collectionId?>">❌</a></td>
+                    <td><a class="btn btn--primary" href="<?=BACKENDROOT?>CollectionsController/update/<?=$results->collectionId?>">✏</a>
+                    <a class="btn btn--primary" href="<?=BACKENDROOT?>CollectionsController/delete/<?=$results->collectionId?>">❌</a></td>
                 </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -47,7 +47,7 @@
         <nav class="pagination text-sm" aria-label="Pagination">
             <ul class="pagination__list flex flex-wrap gap-xxxs">
                 <li>
-                    <a href="<?=APPROOT?>CollectionsController/index/?page=<?=$data['prevPage']?>" <?= ($data['prevPage'] <= 0) ?'style="pointer-events: none"' : ''?> class="pagination__item">
+                    <a href="<?=BACKENDROOT?>CollectionsController/index/?page=<?=$data['prevPage']?>" <?= ($data['prevPage'] <= 0) ?'style="pointer-events: none"' : ''?> class="pagination__item">
                         <svg class="icon" viewBox="0 0 16 16">
                             <title>Go to previous page</title>
                             <g stroke-width="2" stroke="currentColor">
@@ -64,7 +64,7 @@
                 </li>
 
                 <li>
-                    <a href="<?=APPROOT?>CollectionsController/index/?page=<?=$data['nextPage']?>" class="pagination__item">
+                    <a href="<?=BACKENDROOT?>CollectionsController/index/?page=<?=$data['nextPage']?>" class="pagination__item">
                         <svg class="icon" viewBox="0 0 16 16">
                             <title>Go to next page</title>
                             <g stroke-width="2" stroke="currentColor">
@@ -77,6 +77,6 @@
         </nav>
     </div>
 </div>
-<a  role="button" class="btn btn--primary" href="<?=APPROOT?>CollectionsController/create">Create New Collection</a>
+<a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>CollectionsController/create">Create New Collection</a>
 </body>
 </html>

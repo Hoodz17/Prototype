@@ -32,8 +32,8 @@
                     <tr class='int-table__row'>
                         <td class='int-table__cell'><?=$results->mainName?></td>
                         <td class='int-table__cell'><?=$results->categoryName?></td>
-                        <td><a class="btn btn--primary" href="<?=APPROOT?>MainsHasCatsController/update/<?=$results->mainId?>+<?=$results->categoryId?>/">✏</a>
-                            <a class="btn btn--primary" href="<?=APPROOT?>MainsHasCatsController/delete/<?=$results->mainId?>+<?=$results->categoryId?>/">❌</a></td>
+                        <td><a class="btn btn--primary" href="<?=BACKENDROOT?>MainsHasCatsController/update/<?=$results->mainId?>+<?=$results->categoryId?>/">✏</a>
+                            <a class="btn btn--primary" href="<?=BACKENDROOT?>MainsHasCatsController/delete/<?=$results->mainId?>+<?=$results->categoryId?>/">❌</a></td>
                     </tr>
                 <?php endforeach; ?>
                 </tbody>
@@ -46,7 +46,7 @@
         <nav class="pagination text-sm" aria-label="Pagination">
             <ul class="pagination__list flex flex-wrap gap-xxxs">
                 <li>
-                    <a href="<?=APPROOT?>CollectionController/index/?page=<?=$data['nextPage']?>" class="pagination__item">
+                    <a href="<?=BACKENDROOT?>CollectionController/index/?page=<?=$data['nextPage']?>" class="pagination__item">
                         <svg class="icon" viewBox="0 0 16 16">
                             <title>Go to previous page</title>
                             <g stroke-width="2" stroke="currentColor">
@@ -62,7 +62,7 @@
           </span>
                 </li>
                 <li>
-                    <a href="<?=APPROOT?>CollectionController/index/?page=<?=$data['nextPage']?>" class="pagination__item">
+                    <a href="<?=BACKENDROOT?>CollectionController/index/?page=<?=$data['nextPage']?>" class="pagination__item">
                         <svg class="icon" viewBox="0 0 16 16">
                             <title>Go to next page</title>
                             <g stroke-width="2" stroke="currentColor">
@@ -75,6 +75,6 @@
         </nav>
     </div>
 </div>
-<a  role="button" class="btn btn--primary" href="<?=APPROOT?>MainsHasCatsController/create">Create New MainsHasCats</a>
+<a  role="button" class="btn btn--primary" href="<?=BACKENDROOT?>MainsHasCatsController/create">Create New MainsHasCats</a>
 </body>
 </html>

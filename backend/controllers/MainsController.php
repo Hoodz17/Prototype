@@ -24,7 +24,7 @@ class MainsController extends Controller
             $mainId = $this->generateRandomString(4);
             $post = filter_input_array(INPUT_POST, FILTER_UNSAFE_RAW);
             $this->mainModel->createMain($post, $mainId);
-            header('Location: ' . APPROOT . 'MainsController/index');
+            header('Location: ' . BACKENDROOT . 'MainsController/index');
         } else {
             $results = $this->collectionModel->getAllCollections();
             $data = [
@@ -40,7 +40,7 @@ class MainsController extends Controller
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             $this->mainModel->updateMain($post);
             echo "Succesfully update row";
-            header("Location: " . APPROOT . "MainsController/index");
+            header("Location: " . BACKENDROOT . "MainsController/index");
         } else {
             $results = $this->mainModel->getMain($mainId);
 
@@ -63,7 +63,7 @@ class MainsController extends Controller
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $this->mainModel->deleteMain($mainId);
             echo "Succesfully deleted row";
-            header("Location: " . APPROOT . "MainsController/");
+            header("Location: " . BACKENDROOT . "MainsController/");
         } else {
             $data = [
                 'title' => ' Delete Mains',

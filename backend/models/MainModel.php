@@ -12,7 +12,7 @@ class MainModel
     }
     public function getAllMains()
     {
-        $this->db->query(' SELECT mainId, mainName,mainCollectionId,collections.collectionName ,mainCreateDate, mainIsActive 
+        $this->db->query(' SELECT mainId, mainName,mainCollectionId,collections.collectionName ,mainCreateDate, mainIsActive , mainDescription 
                                FROM mains
                                INNER JOIN collections
                                ON mains.mainCollectionId = collections.collectionId 
@@ -22,16 +22,17 @@ class MainModel
     }
     public function getMain($mainId)
     {
-        $this->db->query(' SELECT mainId, mainName, mainCollectionId, mainCreateDate, mainIsActive 
+        $this->db->query(' SELECT mainId, mainName, mainCollectionId, mainCreateDate, mainIsActive , mainDescription 
                                FROM mains WHERE mainId = :mainId ');
         $this->db->bind("mainId", $mainId, PDO::PARAM_INT);
         return $this->db->single();
     }
     public function createMain($post, $mainId){
-        $this->db->query('INSERT INTO  mains ( mainId , mainCollectionId,  mainName , mainCreateDate ,  mainIsActive ) 
-                          VALUES (:mainId, :mainCollectionId, :mainName, :mainCreateDate, :mainIsActive);');
+        $this->db->query('INSERT INTO  mains ( mainId , mainCollectionId,  mainName , mainCreateDate ,  mainIsActive, mainDescription) 
+                          VALUES (:mainId, :mainCollectionId, :mainName, :mainCreateDate, :mainIsActive, :mainDescription);');
         $this->db->bind(':mainId', $mainId);
         $this->db->bind(':mainCollectionId', $post['collectionId']);
+        $this->db->bind(':mainDescription', $post['mainDescription']);
         $this->db->bind(':mainName', $post['mainName']);
         $this->db->bind(':mainCreateDate', time());
         $this->db->bind(':mainIsActive', 1);
@@ -45,10 +46,12 @@ class MainModel
     public function updateMain($post){
         $this->db->query('UPDATE mains 
                               SET mainName = :mainName,
-                                  mainCollectionId = :mainCollectionId
+                                  mainCollectionId = :mainCollectionId , 
+                                  mainDescription = :mainDescription
                                   WHERE mainId = :mainId');
         $this->db->bind(':mainId', $post['mainId']);
         $this->db->bind(':mainCollectionId', $post['collectionId']);
+        $this->db->bind(':mainDescription', $post['mainDescription']);
         $this->db->bind(':mainName', $post['mainName']);
         return $this->db->execute();
     }

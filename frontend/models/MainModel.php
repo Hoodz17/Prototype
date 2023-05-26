@@ -1,14 +1,19 @@
 <?php
-require APPROOT . "/libraries/model.php";
-class MainModel extends Model
+class MainModel
 {
+    public $db;
+    public function __construct()
+    {
+        $this->db = new Database;
+    }
 
     public function getMains($data = NULL)
     {
-        $baseQuery = 'SELECT mainId, mainCollectionId, collections.collectionName, mainName, mainIsActive, mainCreateDate FROM mains
+        $baseQuery = 'SELECT mainId, mainCollectionId, collections.collectionName, mainName, mainIsActive, mainCreateDate, mainDescription FROM mains
                       INNER JOIN collections
                       ON mains.mainCollectionId = collections.collectionId';
         $isActiveQuery = $baseQuery . ' WHERE mainIsActive = 1';
+
 
         if (isset($data)) {
             if ($data['type'] == 'getById') {
@@ -41,5 +46,19 @@ class MainModel extends Model
 
             return $this->db->resultSet();
         }
+    }
+    public function  getSingleMain($mainId){
+        $this->db->query("SELECT * FROM mainhascat 
+                      INNER JOIN mains
+                      ON mainhascat.mainId = mains.mainId 
+                      INNER JOIN collections
+                      ON mains.mainCollectionId = collections.collectionId
+                         INNER JOIN categories
+                         ON mainhascat.categoryId = categories.categoryId
+                    INNER JOIN screens
+                       ON mains.mainId = screens.screenMainId
+                      WHERE mainhascat.mainId = :mainId");
+        $this->db->bind(":mainId", $mainId);
+        return $this->db->single();
     }
 }
