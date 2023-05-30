@@ -21,9 +21,10 @@ class HomepageController extends Controller
                 'categories AS cat ON mc.categoryId = cat.categoryId'
             ),
             'where' => 'm.mainIsActive = 1',
-            'and' => 's.screenIsActive = 1',
+            'and' => 's.screenIsActive = 1 AND s.screenLocation = 1',
             'like' => 'm.mainName',
             'groupBy' => 'm.mainId',
+//            'orderBy' => 's.screenLocation ASC',
             'date' => 'm.mainCreateDate',
             'search' => 'm.mainName',
             'radio' => 'm.mainIsSpotlight',

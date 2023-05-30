@@ -163,6 +163,7 @@ class Controller
             'in' => $inArray,
             'or' => $orArray,
             'groupBy' => $query['groupBy'],
+//            'orderBy' => $query['orderBy'],
             'binds' => $bindsArray
         ];
 

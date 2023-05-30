@@ -11,19 +11,17 @@ class MainsController extends Controller
     }
     public function  read(){
         $params = filter_input_array(INPUT_GET, FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-//        $result = $this->mainModel->getMains(array(
-//            'db' => 'mains',
-//            'select' => 'mainId, mainDescription',
-//            'where' => 'mainIsActive = 1 ',
-//            'and' => 'mainId = :mainId',
-//            'type' => 'getById',
-//            'mainId' => $params['id']
-//        ));
+        $screen = $this->mainModel->getScreens($params['id']);
+            $singleScreen = $this->mainModel->getSingleScreen($params['id'], 1);
+            $screen = $this->mainModel->getScreens($params['id']);
+            array_shift($screen);
+
         $result = $this->mainModel->getSingleMain($params['id']);
         $data = [
             'title' => 'Books Overview',
-            'result' => $result
-
+            'result' => $result,
+            'screen' => $screen,
+            'singleScreen' => $singleScreen
         ];
     $this->view('Mains/read', $data);
     }

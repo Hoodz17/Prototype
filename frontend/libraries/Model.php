@@ -74,6 +74,10 @@ class Model
         if (isset($data['groupBy'])) {
             $query .= ' GROUP BY ' . $data['groupBy'];
         }
+        if (isset($data['orderBy'])) {
+            $query .= ' ORDER BY ' . $data['orderBy'];
+        }
+//        var_dump($query); exit();
         if (isset($data['limit'])) {
             $query .= ' LIMIT ' . $data['limit'];
         }
